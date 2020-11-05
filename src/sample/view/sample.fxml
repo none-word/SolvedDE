@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.Controller">
+   <children>
+      <SplitPane dividerPositions="0.5" prefHeight="800.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TabPane prefHeight="398.4" prefWidth="479.2" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <tabs>
+                      <Tab fx:id="solutionTab" text="Solution">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <LineChart fx:id="solutionChart" layoutX="66.0" layoutY="41.0" prefHeight="368.0" prefWidth="418.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <xAxis>
+                                        <NumberAxis label="X" side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis label="Solution" side="LEFT" />
+                                      </yAxis>
+                                    </LineChart>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab fx:id="LTETab" text="LTE">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <LineChart fx:id="LTEChart" layoutX="-96.0" layoutY="-32.0" prefHeight="368.0" prefWidth="418.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <xAxis>
+                                        <NumberAxis label="X" side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis label="Error" side="LEFT" />
+                                      </yAxis>
+                                    </LineChart>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab fx:id="globalErrorsTab" text="Global errors">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <LineChart fx:id="globalErrorsChart" layoutX="-96.0" layoutY="-32.0" prefHeight="368.0" prefWidth="418.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <xAxis>
+                                          <NumberAxis label="N" side="BOTTOM" />
+                                       </xAxis>
+                                       <yAxis>
+                                          <NumberAxis label="Global error" side="LEFT" />
+                                       </yAxis>
+                                    </LineChart>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane maxWidth="210.0" minHeight="400.0" minWidth="210.0" prefHeight="400.0" prefWidth="210.0">
+               <children>
+                  <TextField layoutX="44.0" layoutY="17.0" prefHeight="26.0" prefWidth="143.0" text="1" fx:id="x0Value" />
+                  <TextField fx:id="XValue" layoutX="44.0" layoutY="49.0" prefHeight="26.0" prefWidth="143.0" text="6" />
+                  <TextField fx:id="n0Value" layoutX="43.0" layoutY="272.0" prefHeight="26.0" prefWidth="143.0" text="10" />
+                  <TextField fx:id="NValue" layoutX="43.0" layoutY="115.0" prefHeight="26.0" prefWidth="143.0" text="10" />
+                  <Label layoutX="18.0" layoutY="16.0" text="x0">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label layoutX="21.0" layoutY="48.0" text="X">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label layoutX="17.0" layoutY="272.0" text="n0">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label layoutX="19.0" layoutY="114.0" text="N">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label layoutX="16.0" layoutY="81.0" text="y0">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <TextField fx:id="YValue" layoutX="43.0" layoutY="82.0" prefHeight="26.0" prefWidth="143.0" text="2" />
+                  <CheckBox fx:id="exactSwitch" layoutX="19.0" layoutY="150.0" mnemonicParsing="false" selected="true" text="Exact solution">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="eulerSwitch" layoutX="19.0" layoutY="177.0" mnemonicParsing="false" selected="true" text="Euler method">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="improvedEulerSwitch" layoutX="19.0" layoutY="205.0" mnemonicParsing="false" selected="true" text="Improved Euler method">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="rungeKuttaSwitch" layoutX="19.0" layoutY="232.0" mnemonicParsing="false" selected="true" text="Runge-Kutta method">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <Label layoutX="20.0" layoutY="305.0" text="N">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="n1Value" layoutX="44.0" layoutY="306.0" prefHeight="26.0" prefWidth="143.0" text="100" />
+                  <Button fx:id="updateButton" layoutX="43.0" layoutY="342.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="143.0" text="Update" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
